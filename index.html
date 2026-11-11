@@ -9,8 +9,22 @@
     <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
     <link rel="apple-touch-icon" href="./apple-touch-icon.png" />
     <title>啥米活动</title>
-    <script type="module" crossorigin src="./assets/index-DzlrVvzM.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DogLD66h.css">
+    <script>
+      /* 首屏防闪烁：CSS 生效前先定好深浅，默认跟随系统 */
+      ;(function () {
+        try {
+          var pref = localStorage.getItem('lineup:theme') || 'system'
+          var dark =
+            pref === 'dark' ||
+            (pref === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+          document.documentElement.classList.toggle('dark', dark)
+        } catch (e) {
+          /* 读不到就保持默认深色 */
+        }
+      })()
+    </script>
+    <script type="module" crossorigin src="./assets/index-3VKm8npu.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-B15-MlhS.css">
   <link rel="manifest" href="./manifest.webmanifest"></head>
   <body>
     <div id="root"></div>
